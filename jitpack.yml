@@ -1,5 +1,7 @@
 before_install:
-  - sdk install java 16
-  - sdk use java 16
-  - sdk install maven 3.8.4
-  - sdk use maven 3.8.4
+  - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh
+  - source install-jdk.sh --feature 16
+  - jshell --version
+install:
+  - echo "Running a custom install command"
+  - mvn clean install -nsu -DskipTests
